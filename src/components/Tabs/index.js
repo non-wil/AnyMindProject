@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Tabs } from 'antd'
+import Input from 'components/Input'
 import './style.scss'
 
 const { TabPane } = Tabs
@@ -10,9 +11,7 @@ const CustomTabs = props => {
     <div className="card-container">
       <Tabs type="card">
         <TabPane tab="Hashtag search" key="1">
-          <p>Content of Tab Pane 1</p>
-          <p>Content of Tab Pane 1</p>
-          <p>Content of Tab Pane 1</p>
+          <Input />
         </TabPane>
         <TabPane tab="User search" key="2">
           <p>Content of Tab Pane 2</p>

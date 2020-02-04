@@ -64,6 +64,9 @@ const CustomTable = props => {
   )
 }
 
-CustomTable.propTypes = {}
+CustomTable.propTypes = {
+  tweetsList: PropTypes.array,
+  loading: PropTypes.bool,
+}
 
 export default CustomTable

@@ -6,10 +6,10 @@ import './style.scss'
 const { Search } = Input
 
 const CustomInput = props => {
-  const { onSearch } = props
+  const { label, onSearch } = props
   return (
     <div className="custom-input">
-      <label>Hashtag search</label>
+      <label>{label}</label>
       <Search
         size="large"
         placeholder="Search By Hashtag"
@@ -20,6 +20,9 @@ const CustomInput = props => {
   )
 }
 
-CustomInput.propTypes = {}
+CustomInput.propTypes = {
+  label: PropTypes.string,
+  onSearch: PropTypes.func,
+}
 
 export default CustomInput

@@ -1,9 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Tabs } from 'antd'
 import Input from 'components/Input'
 import Table from 'components/Table'
-import { getTweetsByHashTag } from 'api'
+// import { getTweetsByHashTag } from 'api' // NOTE: Import API but didn't use, use mock instead. Reason is at function "_getTweetsByHashTag"
 import { getTweetsByHashTagResponse } from 'mock/getTweetsByHashTagResponse.js'
 import './style.scss'
 
@@ -19,11 +18,17 @@ class CustomTabs extends React.Component {
   }
 
   componentDidMount() {
+    document.title = 'AnyMind Project'
     this._getTweetsByHashTag('Python')
   }
 
   _getTweetsByHashTag = hashtag => {
+    //
+    // NOTE: Cannot get result from API because of CORS policy error.
+    //       So I will use mock result instead.
+    //
     console.log('Get tweet by hashtag: ', hashtag)
+
     this.setState({ isFetchingTweetsList: true }, () => {
       setTimeout(() => {
         console.log('getTweetsByHashTagResponse', getTweetsByHashTagResponse)
@@ -33,6 +38,10 @@ class CustomTabs extends React.Component {
         })
       }, 1000)
     })
+
+    //
+    // NOTE: These code are what should really be.
+    //
     // return getTweetsByHashTag(hashtag)
     //   .then(({ data }) => {
     //     this.setState({
@@ -51,10 +60,8 @@ class CustomTabs extends React.Component {
       <div className="card-container">
         <Tabs type="card">
           <TabPane tab="Hashtag search" key="1">
-            <Input onSearch={this._getTweetsByHashTag} />
-            <div className="tab-body">
-              <Table tweetsList={tweetsList} loading={isFetchingTweetsList} />
-            </div>
+            <Input label="Hashtag search" onSearch={this._getTweetsByHashTag} />
+            <Table tweetsList={tweetsList} loading={isFetchingTweetsList} />
           </TabPane>
           <TabPane tab="User search" key="2">
             <p>Content of Tab Pane 2</p>
@@ -66,7 +73,5 @@ class CustomTabs extends React.Component {
     )
   }
 }
-
-CustomTabs.propTypes = {}
 
 export default CustomTabs

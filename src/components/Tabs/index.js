@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Tabs } from 'antd'
 import Input from 'components/Input'
 import Table from 'components/Table'
+import { getTweetsByHashTag } from 'api'
 import './style.scss'
 
 const { TabPane } = Tabs
 
 const CustomTabs = props => {
+  const [tweetsList, setTweetsList] = useState([])
+
+  useEffect(() => {
+    getTweetsByHashTag('SupportSmallStreamers')
+      .then(response => {
+        console.log('tweets', response)
+      })
+      .catch(error => {
+        console.log('error', error)
+      })
+  }, [])
+
   return (
     <div className="card-container">
       <Tabs type="card">

@@ -5,8 +5,21 @@ const request = axios.create({
   timeout: 5000,
 })
 
-export const getTweetsByHashTag = hashtag =>
+/**
+ * @param  {string} hashtag
+ * @param  {number} offset
+ */
+export const getTweetsByHashTag = (hashtag, offset) =>
   request({
     url: `/hashtags/${hashtag}`,
-    params: { offset: 0 },
+    params: { offset },
+  })
+/**
+ * @param  {string} userName
+ * @param  {number} offset
+ */
+export const searchTweetsByUser = (userName, offset) =>
+  request({
+    url: `/users/${userName}`,
+    params: { offset },
   })

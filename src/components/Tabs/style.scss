@@ -1,3 +1,5 @@
+$gray: #f0f0f0;
+
 .ant-tabs-nav {
   margin-left: 20px !important;
 }
@@ -8,20 +10,20 @@
 }
 
 .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
-  background-color: #e8e8e8 !important;
+  background-color: $gray !important;
   border: none !important;
   // color: green !important;
 }
 
 .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {
-  background: #e8e8e8;
+  background: $gray;
   padding: 16px;
   margin-left: 0 !important;
   padding: 40px;
 }
 
 .card-container > .ant-tabs-card > .ant-tabs-bar {
-  border-color: #e8e8e8;
+  border-color: $gray;
   margin-bottom: 0;
 }
 

@@ -6,13 +6,13 @@ import './style.scss'
 const { Search } = Input
 
 const CustomInput = props => {
-  const { label, onSearch } = props
+  const { label, onSearch, placeholder } = props
   return (
     <div className="custom-input">
       <label>{label}</label>
       <Search
         size="large"
-        placeholder="Search By Hashtag"
+        placeholder={placeholder}
         onSearch={value => onSearch(value)}
         style={{ width: 200 }}
       />

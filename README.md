@@ -4,6 +4,7 @@
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 - This project uses [Ant Design](https://ant.design/) as a design system
+- This project use [gitmoji](https://gitmoji.carloscuesta.me/) for easy read commit
 
 ### Things that not in this project
 

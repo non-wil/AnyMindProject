@@ -1,5 +1,8 @@
 $gray: #f0f0f0;
 
+//
+// NOTE: Overwrite antd tabs lib.
+//
 .ant-tabs-nav {
   margin-left: 20px !important;
 }
@@ -12,7 +15,6 @@ $gray: #f0f0f0;
 .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
   background-color: $gray !important;
   border: none !important;
-  // color: green !important;
 }
 
 .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {
@@ -27,11 +29,9 @@ $gray: #f0f0f0;
   margin-bottom: 0;
 }
 
-.card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
-  border-color: purple;
-  background: purple;
-}
-
+//
+// NOTE: Custom style
+//
 .card-container {
   .tab-body {
     margin-top: 20px;

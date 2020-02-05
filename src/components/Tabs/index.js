@@ -2,11 +2,11 @@ import React from 'react'
 import { Tabs } from 'antd'
 import Input from 'components/Input'
 import Table from 'components/Table'
-// import { getTweetsByHashTag } from 'api' // NOTE: Import API but didn't use, use mock instead. Reason is at function "_getTweetsByHashTag"
-// import { searchTweetsByUser } from 'api' // NOTE: Import API but didn't use, use mock instead. Reason is at function "_getTweetsByHashTag"
 import { getTweetsByHashTagResponse } from 'mock/getTweetsByHashTagResponse'
 import { searchTweetsByUserResponse } from 'mock/searchTweetsByUser'
 import './style.scss'
+// import { getTweetsByHashTag } from 'api' // NOTE: Import API but didn't use, use mock instead. Reason is at function "_getTweetsByHashTag"
+// import { searchTweetsByUser } from 'api' // NOTE: Import API but didn't use, use mock instead. Reason is at function "_getTweetsByHashTag"
 
 const { TabPane } = Tabs
 
@@ -24,6 +24,10 @@ class CustomTabs extends React.Component {
     this._getTweetsByHashTag('Python')
   }
 
+  /**
+   * @param  {string} hashtag
+   * @param  {number} offset=0
+   */
   _getTweetsByHashTag = (hashtag, offset = 0) => {
     //
     // NOTE: Cannot get result from API because of CORS policy error.
@@ -55,6 +59,10 @@ class CustomTabs extends React.Component {
     //   })
   }
 
+  /**
+   * @param  {string} userName
+   * @param  {number} offset=0
+   */
   _searchTweetsByUser = (userName, offset = 0) => {
     //
     // NOTE: Cannot get result from API because of CORS policy error.

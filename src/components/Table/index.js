@@ -36,7 +36,7 @@ const columns = [
     render: hashtags => (
       <div>
         {hashtags.map((item, index) => {
-          if (index > 2) return ''
+          if (index > 1) return ''
           else return <div key={index}>{item}</div>
         })}
       </div>
